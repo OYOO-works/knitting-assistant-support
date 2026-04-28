@@ -86,7 +86,8 @@
       },
       {
         "@type": "FAQPage",
-        "@id": "https://oyoo-works.github.io/knitting-assistant-support/#faq",
+        "@id": "https://oyoo-works.github.io/knitting-assistant-support/faq.html",
+        "url": "https://oyoo-works.github.io/knitting-assistant-support/faq.html",
         "mainEntity": [
           {
             "@type": "Question",
@@ -149,7 +150,7 @@
             "name": "対応しているiOSのバージョンは？",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "iOS 16.2以上のiPhoneに対応しています。iPadは現在未対応です。"
+              "text": "iOS 16.2以上のiPhoneに対応しています。"
             }
           },
           {
@@ -370,38 +371,6 @@
     .step h3 { font-size: 1rem; font-weight: 700; margin-bottom: 6px; }
     .step p { font-size: 0.9rem; color: var(--color-text-muted); }
 
-    /* ── FAQ ── */
-    .faq-list { display: grid; gap: 16px; }
-
-    details {
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius);
-      overflow: hidden;
-    }
-
-    summary {
-      padding: 20px 24px;
-      font-weight: 700;
-      font-size: 0.95rem;
-      cursor: pointer;
-      list-style: none;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    summary::-webkit-details-marker { display: none; }
-    summary::after { content: "＋"; font-size: 1.1rem; color: var(--color-accent); flex-shrink: 0; margin-left: 16px; }
-    details[open] summary::after { content: "－"; }
-
-    .faq-answer {
-      padding: 16px 24px 20px;
-      font-size: 0.9rem;
-      color: var(--color-text-muted);
-      border-top: 1px solid var(--color-border);
-    }
-
     /* ── Support ── */
     .support-bg { background: var(--color-surface); }
 
@@ -465,7 +434,7 @@
       <nav>
         <a href="#features">機能</a>
         <a href="#how">使い方</a>
-        <a href="#faq">FAQ</a>
+        <a href="faq.html">FAQ</a>
         <a href="#support">サポート</a>
       </nav>
     </div>
@@ -496,8 +465,8 @@
       <div class="features-grid">
         <div class="feature-card">
           <div class="feature-icon" aria-hidden="true">📄</div>
-          <h3>編み図PDFを取り込んで表示</h3>
-          <p>PDFKitを使い、手持ちの編み図PDFをアプリに取り込んで表示。段帯ハイライトが現在の段を常に示します。</p>
+          <h3>編み図を取り込んで表示</h3>
+          <p>手持ちの編み図のPDFや写真をアプリに取り込んで表示。段帯ハイライトが現在の段を常に示します。</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon" aria-hidden="true">🖼️</div>
@@ -507,12 +476,12 @@
         <div class="feature-card">
           <div class="feature-icon" aria-hidden="true">🎙️</div>
           <h3>音声操作で段数を進める</h3>
-          <p>「次の段」と話しかけるだけで1段前進。両手が糸でふさがっていても問題ありません。</p>
+          <p>「次の段」と話しかけるだけで1段前進。両手が編み物でふさがっていても問題ありません。</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon" aria-hidden="true">🤙</div>
           <h3>Siriショートカット対応</h3>
-          <p>「Hey Siri、編みアシで次の段」と言えば、他のアプリを使いながらでも段数を進められます。</p>
+          <p>「Hey Siri、編みアシ次の段」と言えば、他のアプリを使いながらでも段数を進められます。</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon" aria-hidden="true">🔧</div>
@@ -538,7 +507,7 @@
           <div class="step-num">1</div>
           <div>
             <h3>プロジェクトを作成する</h3>
-            <p>「新規作成」をタップして、PDFや写真の編み図をインポート。タイトルを付けて保存します。段数のみのカウンタープロジェクトも作れます。</p>
+            <p>「新規作成」をタップして、PDFや写真の編み図をインポート。タイトルを付けて保存します。段数のみの管理も可能です。</p>
           </div>
         </div>
         <div class="step">
@@ -552,7 +521,7 @@
           <div class="step-num">3</div>
           <div>
             <h3>編みながら段を進める</h3>
-            <p>「次の段」ボタン、音声、またはSiriで段を進めます。現在の段番号が大きく表示され、PDF上の段帯も自動でスクロールします。</p>
+            <p>「次の段」ボタン、音声、またはSiriで段を進めます。現在の段番号が大きく表示され、編み図（写真・PDF)上の段帯も自動でスクロールします。</p>
           </div>
         </div>
       </div>
@@ -564,86 +533,10 @@
     <div class="container">
       <p class="section-label">FAQ</p>
       <h2 class="section-title">よくある質問</h2>
-      <div class="faq-list">
-
-        <details open>
-          <summary>編みアシはどんなアプリですか？</summary>
-          <p class="faq-answer">
-            手持ちの編み図PDF・写真を読み込み、現在の段をハイライト表示しながら段数を管理できるiPhone向けアプリです。音声コマンドやSiriで両手が塞がっていても段数を進められます。棒針・かぎ針どちらにも対応しており、無料で利用できます。
-          </p>
-        </details>
-
-        <details>
-          <summary>段帯（ハイライト）機能とは何ですか？</summary>
-          <p class="faq-answer">
-            編み図PDF・写真の上に現在編んでいる段の位置を色帯で重ねて表示する機能です。段を進めるたびに帯が自動的に次の段へ移動するため、「今どの段を編んでいるか」が一目でわかります。段帯の位置はキャリブレーション機能で正確に合わせられます。
-          </p>
-        </details>
-
-        <details>
-          <summary>編み図のPDFはどうやって使いますか？</summary>
-          <p class="faq-answer">
-            「新規作成」から「PDFの編み図をインポートする」を選び、PDFファイルを選択するだけです。インポートした編み図上に現在段を示す帯が重なって表示されます。
-          </p>
-        </details>
-
-        <details>
-          <summary>音声操作はどのように使いますか？</summary>
-          <p class="faq-answer">
-            アプリ内で音声操作をオンにすると「次の段」と話しかけるだけで1段進みます。Siriショートカットを設定すれば、他のアプリを使用中でも「Hey Siri、[設定した言葉]」と言うだけで段数を進めることができます。マイクとSpeech Recognitionの許可が必要です。
-          </p>
-        </details>
-
-        <details>
-          <summary>段の位置がずれているときはどうすればいいですか？</summary>
-          <p class="faq-answer">
-            「高さ調整」ボタンからキャリブレーション機能を使います。段帯を実際の段に合わせるステップ形式のガイドが表示され、段高さと上下端を正確に設定できます。編み図によって段の高さが異なっても対応できます。
-          </p>
-        </details>
-
-        <details>
-          <summary>PDFがない場合でも使えますか？</summary>
-          <p class="faq-answer">
-            はい。「編み図をインポートせず段数のみカウントする」を選ぶと、PDFなしで純粋な段数カウンターとして使えます。写真として保存した編み図も読み込めます。
-          </p>
-        </details>
-
-        <details>
-          <summary>棒針とかぎ針の両方に使えますか？</summary>
-          <p class="faq-answer">
-            はい。棒針・かぎ針どちらの編み図にも対応しています。段帯は縦方向のどんな編み図にも合わせて調整できます。
-          </p>
-        </details>
-
-        <details>
-          <summary>対応しているiOSのバージョンは？</summary>
-          <p class="faq-answer">
-            iOS 16.2以上のiPhoneに対応しています。iPadは現在未対応です。
-          </p>
-        </details>
-
-        <details>
-          <summary>無料で使えますか？</summary>
-          <p class="faq-answer">
-            基本機能は無料でご利用いただけます。現在は1アプリあたり最大5プロジェクトまで作成できます。
-          </p>
-        </details>
-
-        <details>
-          <summary>マイクを許可しなくても使えますか？</summary>
-          <p class="faq-answer">
-            はい。マイクへのアクセスを許可しない場合でも、PDF表示・段帯のオーバーレイ・手動での段数操作といった基本機能はすべて利用できます。音声操作・Siriショートカットを使いたい場合のみ許可が必要です。
-          </p>
-        </details>
-
-        <details>
-          <summary>プロジェクトのデータはどこに保存されますか？</summary>
-          <p class="faq-answer">
-            すべてのデータはお使いのiPhone内にローカル保存されます。外部サーバーへのデータ送信は行いません。
-          </p>
-        </details>
-
-      </div>
+      <p style="color: var(--color-text-muted); margin-bottom: 32px;">
+        使い方・トラブルシューティング・プライバシーなど、よくある質問をまとめています。
+      </p>
+      <a href="faq.html" class="btn btn-primary">よくある質問をすべて見る →</a>
     </div>
   </section>
 
@@ -656,8 +549,7 @@
         <div class="support-card">
           <div class="support-icon" aria-hidden="true">💬</div>
           <h3>問題が解決しない場合</h3>
-          <p>GitHub Issues からお問い合わせいただけます。</p>
-          <a href="https://github.com/OYOO-works/knitting-assistant-support/issues" target="_blank" rel="noopener">Issues を開く</a>
+          <p>oyoo.contact@icloud.comまでご連絡ください</p>
         </div>
         <div class="support-card">
           <div class="support-icon" aria-hidden="true">🔒</div>
@@ -678,7 +570,7 @@
     <div class="container">
       <h2>編み物をもっとたのしく</h2>
       <p>編みアシで、段数管理の手間をなくしましょう。<br>現在 TestFlight にてベータテスト中です。</p>
-      <a href="#faq" class="btn btn-white">よくある質問を見る</a>
+      <a href="faq.html" class="btn btn-white">よくある質問を見る</a>
     </div>
   </section>
 
@@ -689,7 +581,7 @@
       <p>&copy; 2026 OYOO. All rights reserved.</p>
       <div class="footer-links">
         <a href="https://github.com/OYOO-works/knitting-assistant-support/issues" target="_blank" rel="noopener">サポート</a>
-        <a href="#faq">プライバシー</a>
+        <a href="faq.html">FAQ</a>
       </div>
     </div>
   </footer>
