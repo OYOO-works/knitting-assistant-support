@@ -1,47 +1,698 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>編みアシ サポート</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>編みアシ — 編み物アシスタントアプリ for iPhone | PDF・写真の編み図に段帯表示・音声操作</title>
+  <meta name="description" content="編みアシは、編み図PDFや写真を読み込んで段帯をオーバーレイ表示し、音声・Siriで段数を管理できるiPhone向け無料編み物アシスタントアプリです。棒針・かぎ針に対応。iOS 16.2以上。" />
+  <meta name="keywords" content="編み物, 編み図, 段数カウンター, 棒針, かぎ針, iPhoneアプリ, 音声操作, Siri, PDF, 編みアシ, knitting assistant, 段帯, オーバーレイ" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://oyoo-works.github.io/knitting-assistant-support/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="編みアシ — 編み物アシスタントアプリ for iPhone" />
+  <meta property="og:description" content="編み図PDFを読み込んで段帯をオーバーレイ表示。音声・Siriで段数を管理できる新しい編み物体験。" />
+  <meta property="og:locale" content="ja_JP" />
+  <meta property="og:url" content="https://oyoo-works.github.io/knitting-assistant-support/" />
+  <meta property="og:site_name" content="編みアシ" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="編みアシ — 編み物アシスタントアプリ" />
+  <meta name="twitter:description" content="編み図PDFを読み込んで段帯をオーバーレイ表示。音声・Siriで段数を管理できる新しい編み物体験。" />
+
+  <!-- Schema.org: SoftwareApplication + FAQPage + WebSite -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://oyoo-works.github.io/knitting-assistant-support/#website",
+        "url": "https://oyoo-works.github.io/knitting-assistant-support/",
+        "name": "編みアシ サポートページ",
+        "inLanguage": "ja",
+        "publisher": {
+          "@type": "Person",
+          "name": "OYOO"
+        }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://oyoo-works.github.io/knitting-assistant-support/#app",
+        "name": "編みアシ",
+        "alternateName": ["Ami-Ashi", "Knitting Assistant", "編み物アシスタント"],
+        "description": "編みアシは、編み図PDFや写真を読み込んで段帯をオーバーレイ表示し、音声操作やSiriで段数を管理できるiPhone向け編み物アシスタントアプリです。棒針・かぎ針問わず、あらゆる編み物作業をサポートします。",
+        "applicationCategory": "LifestyleApplication",
+        "applicationSubCategory": "Hobbies & Leisure",
+        "operatingSystem": "iOS 16.2以上",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "JPY",
+          "availability": "https://schema.org/InStock"
+        },
+        "featureList": [
+          "編み図PDFの読み込みと表示（PDFKit使用）",
+          "写真として保存した編み図の読み込み",
+          "現在段のオーバーレイ表示（段帯ハイライト）",
+          "段の大きな数字表示",
+          "段高さ・上下端のキャリブレーション機能",
+          "音声操作による段数の増減",
+          "Siriショートカット対応（他アプリ使用中でも操作可能）",
+          "ハプティクフィードバック",
+          "画面スリープ防止オプション",
+          "棒針・かぎ針両対応",
+          "段数カウンターのみモード"
+        ],
+        "screenshot": [],
+        "softwareRequirements": "iPhone、iOS 16.2以上",
+        "softwareVersion": "1.0",
+        "author": {
+          "@type": "Person",
+          "name": "OYOO"
+        },
+        "inLanguage": "ja",
+        "audience": {
+          "@type": "Audience",
+          "audienceType": "編み物愛好家"
+        },
+        "releaseNotes": "TestFlight配布後、App Store公開予定",
+        "supportingData": {
+          "@type": "DataFeed",
+          "url": "https://oyoo-works.github.io/knitting-assistant-support/"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://oyoo-works.github.io/knitting-assistant-support/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "編みアシはどんなアプリですか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "編みアシは、手持ちの編み図PDF・写真を読み込み、現在の段をハイライト表示しながら段数を管理できるiPhone向けアプリです。音声コマンドやSiriで両手が塞がっていても段数を進められます。棒針・かぎ針どちらにも対応しており、無料で利用できます。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "編みアシの段帯（ハイライト）機能とは何ですか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "編み図PDF・写真の上に現在編んでいる段の位置を色帯で重ねて表示する機能です。段を進めるたびに帯が自動的に次の段へ移動するため、「今どの段を編んでいるか」が一目でわかります。段帯の位置はキャリブレーション機能で正確に合わせられます。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "編み図のPDFはどうやって使いますか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "アプリ内の「新規作成」から「PDFの編み図をインポートする」を選び、お手持ちのPDFファイルを選択するだけです。インポートしたPDF上に現在の段を示す帯（ハイライト）が重なって表示されます。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "音声操作はどのように使いますか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "アプリ内で音声操作をオンにすると「次の段」と話しかけるだけで1段前進します。またSiriショートカットを設定すれば、他のアプリを使用中でも「Hey Siri、編みアシで次の段」と言うだけで段数を進めることができます。マイクへのアクセス許可が必要です。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Siriショートカットはどうやって設定しますか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "アプリ内のプロジェクト画面からSiriショートカット設定を開き、「次の段へ進む」などのアクションを登録できます。設定後はiPhoneのショートカットアプリからも管理でき、「Hey Siri、[設定した言葉]」で呼び出せます。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "段の位置がずれているときはどうすればいいですか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "「高さ調整」ボタンからキャリブレーション機能を使います。段帯を実際の編み図の段に合わせるステップ形式のガイドが表示され、段高さと上下端を正確に設定できます。編み図によって段の高さが異なっても対応できます。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "PDFがない場合でも使えますか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "はい。「編み図をインポートせず段数のみカウントする」を選ぶと、PDFなしで純粋な段数カウンターとして使えます。写真として保存した編み図も読み込めます。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "対応しているiOSのバージョンは？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "iOS 16.2以上のiPhoneに対応しています。iPadは現在未対応です。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "無料で使えますか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "基本機能は無料でご利用いただけます。現在は1アプリあたり最大5プロジェクトまで作成できます。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "棒針とかぎ針の両方に使えますか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "はい。棒針・かぎ針どちらの編み図にも対応しています。段帯は縦方向のどんな編み図にも合わせて調整できます。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "マイクへのアクセスを許可しないと使えませんか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "いいえ。マイクへのアクセスを許可しない場合でも、PDF表示・段帯のオーバーレイ・手動での段数操作といった基本機能はすべて利用できます。音声操作とSiriショートカットを使いたい場合のみマイクとSpeech Recognitionの許可が必要です。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "プロジェクトのデータはどこに保存されますか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "すべてのデータはお使いのiPhone内にローカル保存されます。外部サーバーへのデータ送信は行いません。"
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
   <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-      line-height: 1.6;
-      margin: 20px;
-      max-width: 600px;
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --color-bg: #faf9f7;
+      --color-surface: #ffffff;
+      --color-accent: #c97d4e;
+      --color-accent-light: #f5e9de;
+      --color-text: #1a1a1a;
+      --color-text-muted: #666666;
+      --color-border: #e8e0d8;
+      --radius: 16px;
+      --max-w: 860px;
     }
-    h1 { font-size: 24px; }
-    h2 { margin-top: 24px; }
-    a { color: #007AFF; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+      background: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.7;
+    }
+
+    a { color: var(--color-accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section { padding: 72px 0; }
+
+    /* ── Header ── */
+    header {
+      background: var(--color-surface);
+      border-bottom: 1px solid var(--color-border);
+      padding: 16px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--color-text);
+      letter-spacing: 0.05em;
+    }
+
+    .logo span { color: var(--color-accent); }
+
+    nav a {
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      margin-left: 24px;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(160deg, var(--color-accent-light) 0%, var(--color-bg) 60%);
+      padding: 80px 0 64px;
+      text-align: center;
+    }
+
+    .hero-icon {
+      font-size: 4rem;
+      line-height: 1;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      margin-bottom: 8px;
+    }
+
+    .hero .subtitle {
+      font-size: 1rem;
+      color: var(--color-text-muted);
+      margin-bottom: 20px;
+      letter-spacing: 0.08em;
+    }
+
+    .hero .description {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto 40px;
+      color: var(--color-text-muted);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 36px;
+      border-radius: 100px;
+      font-size: 1rem;
+      font-weight: 700;
+      transition: opacity 0.2s;
+    }
+
+    .btn:hover { opacity: 0.85; text-decoration: none; }
+    .btn-primary { background: var(--color-accent); color: #fff; }
+
+    .badge {
+      display: inline-block;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 100px;
+      padding: 6px 16px;
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+      margin-top: 20px;
+    }
+
+    /* ── Features ── */
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--color-accent);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 800;
+      margin-bottom: 48px;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+
+    .feature-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+    }
+
+    .feature-icon { font-size: 2rem; margin-bottom: 16px; }
+    .feature-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+    .feature-card p { font-size: 0.9rem; color: var(--color-text-muted); }
+
+    /* ── How it works ── */
+    .how-bg { background: var(--color-surface); }
+
+    .steps { display: grid; gap: 32px; }
+
+    .step { display: flex; gap: 24px; align-items: flex-start; }
+
+    .step-num {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      color: #fff;
+      font-weight: 800;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .step h3 { font-size: 1rem; font-weight: 700; margin-bottom: 6px; }
+    .step p { font-size: 0.9rem; color: var(--color-text-muted); }
+
+    /* ── FAQ ── */
+    .faq-list { display: grid; gap: 16px; }
+
+    details {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    summary {
+      padding: 20px 24px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "＋"; font-size: 1.1rem; color: var(--color-accent); flex-shrink: 0; margin-left: 16px; }
+    details[open] summary::after { content: "－"; }
+
+    .faq-answer {
+      padding: 16px 24px 20px;
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+      border-top: 1px solid var(--color-border);
+    }
+
+    /* ── Support ── */
+    .support-bg { background: var(--color-surface); }
+
+    .support-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .support-card {
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 24px;
+      text-align: center;
+    }
+
+    .support-card .support-icon { font-size: 1.8rem; margin-bottom: 12px; }
+    .support-card h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 8px; }
+    .support-card p { font-size: 0.85rem; color: var(--color-text-muted); }
+    .support-card a { display: inline-block; margin-top: 12px; font-size: 0.85rem; font-weight: 700; color: var(--color-accent); }
+
+    /* ── CTA ── */
+    .cta {
+      background: linear-gradient(160deg, var(--color-accent) 0%, #a05c30 100%);
+      color: #fff;
+      text-align: center;
+      padding: 80px 0;
+    }
+
+    .cta h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; margin-bottom: 16px; }
+    .cta p { font-size: 1rem; opacity: 0.88; margin-bottom: 40px; }
+    .btn-white { background: #fff; color: var(--color-accent); }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--color-text);
+      color: rgba(255,255,255,0.6);
+      padding: 40px 0;
+      text-align: center;
+      font-size: 0.8rem;
+    }
+
+    .logo-footer { color: #fff; font-weight: 700; margin-bottom: 8px; }
+    .footer-links { margin-top: 12px; }
+    .footer-links a { color: rgba(255,255,255,0.5); margin: 0 12px; font-size: 0.75rem; }
+    .footer-links a:hover { color: rgba(255,255,255,0.9); text-decoration: none; }
+
+    @media (max-width: 600px) {
+      section { padding: 48px 0; }
+      .hero { padding: 56px 0 48px; }
+      nav { display: none; }
+    }
   </style>
 </head>
 <body>
 
-<h1>編みアシ サポート</h1>
+  <!-- ── Header ── -->
+  <header>
+    <div class="container">
+      <span class="logo">編み<span>アシ</span></span>
+      <nav>
+        <a href="#features">機能</a>
+        <a href="#how">使い方</a>
+        <a href="#faq">FAQ</a>
+        <a href="#support">サポート</a>
+      </nav>
+    </div>
+  </header>
 
-<h2>お問い合わせ</h2>
-<p>
-不具合・ご要望は以下までご連絡ください。<br>
-<a href="mailto:oyoo_support@icloud.com">oyoo_support@icloud.com</a>
-</p>
+  <!-- ── Hero ── -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-icon" aria-hidden="true">🧶</div>
+      <h1>編みアシ</h1>
+      <p class="subtitle">Knitting Assistant for iPhone</p>
+      <p class="description">
+        編み図PDFや写真を読み込んで段帯をオーバーレイ表示。<br>
+        音声・Siriで段数を管理する、新しい編み物体験。
+      </p>
+      <a href="#how" class="btn btn-primary">使い方を見る</a>
+      <div>
+        <span class="badge">iOS 16.2以上 対応 &middot; 無料</span>
+      </div>
+    </div>
+  </section>
 
-<h2>よくある質問</h2>
-<p>
-<strong>Q. 段の位置が合いません</strong><br>
-→「高さ調整」で位置を合わせてください。
-</p>
+  <!-- ── Features ── -->
+  <section id="features">
+    <div class="container">
+      <p class="section-label">Features</p>
+      <h2 class="section-title">編みアシでできること</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">📄</div>
+          <h3>編み図PDFを取り込んで表示</h3>
+          <p>PDFKitを使い、手持ちの編み図PDFをアプリに取り込んで表示。段帯ハイライトが現在の段を常に示します。</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">🖼️</div>
+          <h3>写真の編み図にも対応</h3>
+          <p>カメラロールの写真として保存した編み図も取り込めます。PDFがなくても安心です。</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">🎙️</div>
+          <h3>音声操作で段数を進める</h3>
+          <p>「次の段」と話しかけるだけで1段前進。両手が糸でふさがっていても問題ありません。</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">🤙</div>
+          <h3>Siriショートカット対応</h3>
+          <p>「Hey Siri、編みアシで次の段」と言えば、他のアプリを使いながらでも段数を進められます。</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">🔧</div>
+          <h3>段帯のキャリブレーション</h3>
+          <p>段高さ・上下端をステップガイドで正確に設定。どんな編み図にも合わせられます。</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">🔢</div>
+          <h3>段数カウンターとしても使える</h3>
+          <p>PDFも写真もなくてOK。シンプルな段数カウンターとして棒針・かぎ針どちらにも利用できます。</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<p>
-<strong>Q. 音声操作が動きません</strong><br>
-→マイクと音声認識の許可を確認してください。
-</p>
+  <!-- ── How it works ── -->
+  <section id="how" class="how-bg">
+    <div class="container">
+      <p class="section-label">How to Use</p>
+      <h2 class="section-title">かんたん3ステップ</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div>
+            <h3>プロジェクトを作成する</h3>
+            <p>「新規作成」をタップして、PDFや写真の編み図をインポート。タイトルを付けて保存します。段数のみのカウンタープロジェクトも作れます。</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div>
+            <h3>段帯を編み図に合わせる</h3>
+            <p>「高さ調整」でキャリブレーションを実行。段帯の上端・下端を実際の段に重ねることで、正確な位置追跡ができます。</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div>
+            <h3>編みながら段を進める</h3>
+            <p>「次の段」ボタン、音声、またはSiriで段を進めます。現在の段番号が大きく表示され、PDF上の段帯も自動でスクロールします。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<h2>対応環境</h2>
-<p>iOS 16以上</p>
+  <!-- ── FAQ ── -->
+  <section id="faq">
+    <div class="container">
+      <p class="section-label">FAQ</p>
+      <h2 class="section-title">よくある質問</h2>
+      <div class="faq-list">
 
-<h2>プライバシーポリシー</h2>
-<p>本アプリは個人情報を収集しません。</p>
+        <details open>
+          <summary>編みアシはどんなアプリですか？</summary>
+          <p class="faq-answer">
+            手持ちの編み図PDF・写真を読み込み、現在の段をハイライト表示しながら段数を管理できるiPhone向けアプリです。音声コマンドやSiriで両手が塞がっていても段数を進められます。棒針・かぎ針どちらにも対応しており、無料で利用できます。
+          </p>
+        </details>
+
+        <details>
+          <summary>段帯（ハイライト）機能とは何ですか？</summary>
+          <p class="faq-answer">
+            編み図PDF・写真の上に現在編んでいる段の位置を色帯で重ねて表示する機能です。段を進めるたびに帯が自動的に次の段へ移動するため、「今どの段を編んでいるか」が一目でわかります。段帯の位置はキャリブレーション機能で正確に合わせられます。
+          </p>
+        </details>
+
+        <details>
+          <summary>編み図のPDFはどうやって使いますか？</summary>
+          <p class="faq-answer">
+            「新規作成」から「PDFの編み図をインポートする」を選び、PDFファイルを選択するだけです。インポートした編み図上に現在段を示す帯が重なって表示されます。
+          </p>
+        </details>
+
+        <details>
+          <summary>音声操作はどのように使いますか？</summary>
+          <p class="faq-answer">
+            アプリ内で音声操作をオンにすると「次の段」と話しかけるだけで1段進みます。Siriショートカットを設定すれば、他のアプリを使用中でも「Hey Siri、[設定した言葉]」と言うだけで段数を進めることができます。マイクとSpeech Recognitionの許可が必要です。
+          </p>
+        </details>
+
+        <details>
+          <summary>段の位置がずれているときはどうすればいいですか？</summary>
+          <p class="faq-answer">
+            「高さ調整」ボタンからキャリブレーション機能を使います。段帯を実際の段に合わせるステップ形式のガイドが表示され、段高さと上下端を正確に設定できます。編み図によって段の高さが異なっても対応できます。
+          </p>
+        </details>
+
+        <details>
+          <summary>PDFがない場合でも使えますか？</summary>
+          <p class="faq-answer">
+            はい。「編み図をインポートせず段数のみカウントする」を選ぶと、PDFなしで純粋な段数カウンターとして使えます。写真として保存した編み図も読み込めます。
+          </p>
+        </details>
+
+        <details>
+          <summary>棒針とかぎ針の両方に使えますか？</summary>
+          <p class="faq-answer">
+            はい。棒針・かぎ針どちらの編み図にも対応しています。段帯は縦方向のどんな編み図にも合わせて調整できます。
+          </p>
+        </details>
+
+        <details>
+          <summary>対応しているiOSのバージョンは？</summary>
+          <p class="faq-answer">
+            iOS 16.2以上のiPhoneに対応しています。iPadは現在未対応です。
+          </p>
+        </details>
+
+        <details>
+          <summary>無料で使えますか？</summary>
+          <p class="faq-answer">
+            基本機能は無料でご利用いただけます。現在は1アプリあたり最大5プロジェクトまで作成できます。
+          </p>
+        </details>
+
+        <details>
+          <summary>マイクを許可しなくても使えますか？</summary>
+          <p class="faq-answer">
+            はい。マイクへのアクセスを許可しない場合でも、PDF表示・段帯のオーバーレイ・手動での段数操作といった基本機能はすべて利用できます。音声操作・Siriショートカットを使いたい場合のみ許可が必要です。
+          </p>
+        </details>
+
+        <details>
+          <summary>プロジェクトのデータはどこに保存されますか？</summary>
+          <p class="faq-answer">
+            すべてのデータはお使いのiPhone内にローカル保存されます。外部サーバーへのデータ送信は行いません。
+          </p>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Support ── -->
+  <section id="support" class="support-bg">
+    <div class="container">
+      <p class="section-label">Support</p>
+      <h2 class="section-title">サポート・お問い合わせ</h2>
+      <div class="support-grid">
+        <div class="support-card">
+          <div class="support-icon" aria-hidden="true">💬</div>
+          <h3>問題が解決しない場合</h3>
+          <p>GitHub Issues からお問い合わせいただけます。</p>
+          <a href="https://github.com/OYOO-works/knitting-assistant-support/issues" target="_blank" rel="noopener">Issues を開く</a>
+        </div>
+        <div class="support-card">
+          <div class="support-icon" aria-hidden="true">🔒</div>
+          <h3>プライバシーポリシー</h3>
+          <p>本アプリはユーザーデータを外部に送信しません。マイクとSpeech Recognitionは音声操作にのみ使用します。</p>
+        </div>
+        <div class="support-card">
+          <div class="support-icon" aria-hidden="true">📱</div>
+          <h3>動作環境</h3>
+          <p>iPhone / iOS 16.2以上<br>必要な権限: マイク（音声操作使用時のみ）</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <section class="cta">
+    <div class="container">
+      <h2>編み物をもっとたのしく</h2>
+      <p>編みアシで、段数管理の手間をなくしましょう。<br>現在 TestFlight にてベータテスト中です。</p>
+      <a href="#faq" class="btn btn-white">よくある質問を見る</a>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer>
+    <div class="container">
+      <p class="logo-footer">編みアシ</p>
+      <p>&copy; 2026 OYOO. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="https://github.com/OYOO-works/knitting-assistant-support/issues" target="_blank" rel="noopener">サポート</a>
+        <a href="#faq">プライバシー</a>
+      </div>
+    </div>
+  </footer>
 
 </body>
 </html>
