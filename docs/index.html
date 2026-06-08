@@ -248,6 +248,39 @@
 
     section { padding: 72px 0; scroll-margin-top: 72px; }
 
+    /* ── Announcement ── */
+    .announcement {
+      background: #fff4e5;
+      border-bottom: 1px solid #f0c98a;
+      color: #5a3e00;
+      padding: 16px 0;
+    }
+
+    .announcement .container {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .announcement-icon {
+      flex-shrink: 0;
+      font-size: 1.2rem;
+      line-height: 1.5;
+    }
+
+    .announcement-body { flex: 1; }
+
+    .announcement-title {
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .announcement-body p {
+      font-size: 0.92rem;
+      line-height: 1.6;
+      margin: 4px 0 0;
+    }
+
     /* ── Header ── */
     header {
       background: var(--color-surface);
@@ -601,6 +634,19 @@
   </style>
 </head>
 <body>
+
+  <!-- ── Announcement ── -->
+  <div class="announcement" role="alert">
+    <div class="container">
+      <span class="announcement-icon" aria-hidden="true">⚠️</span>
+      <div class="announcement-body">
+        <div class="announcement-title">【編みアシをご利用の方へ】</div>
+        <p>Ver1.1.0にアップデート後、登録済みの編み図やプロジェクトが表示されないとのご連絡をいただいており、現在確認中です。</p>
+        <p>データが端末内に残っている可能性があるため、念のためアプリの削除・再インストールは行わず、そのままお待ちください。</p>
+        <p>ご不便をおかけし申し訳ありません。</p>
+      </div>
+    </div>
+  </div>
 
   <!-- ── Header ── -->
   <header>
