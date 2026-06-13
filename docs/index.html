@@ -406,6 +406,23 @@
     .btn:hover { opacity: 0.85; text-decoration: none; }
     .btn-primary { background: var(--color-accent); color: #fff; }
 
+    .hero-store {
+      margin-top: 28px;
+    }
+
+    .appstore-badge {
+      display: inline-block;
+      transition: opacity 0.2s;
+    }
+
+    .appstore-badge:hover { opacity: 0.85; }
+
+    .appstore-badge img {
+      display: block;
+      height: 48px;
+      width: auto;
+    }
+
     .badge {
       display: inline-block;
       background: var(--color-surface);
@@ -688,6 +705,11 @@
         音声・Siriで段数を管理する、新しい編み物体験。
       </p>
       <a href="#how" class="btn btn-primary" data-i18n="hero.cta">使い方を見る</a>
+      <div class="hero-store">
+        <a href="https://apps.apple.com/jp/app/%E7%B7%A8%E3%81%BF%E3%82%A2%E3%82%B7-%E7%B7%A8%E3%81%BF%E7%89%A9%E3%82%A2%E3%82%B7%E3%82%B9%E3%82%BF%E3%83%B3%E3%83%88/id6759698233" class="appstore-badge" data-i18n-attr="href:hero.badgeUrl">
+          <img src="badges/appstore-ja.svg" alt="App Storeで開く" data-i18n-attr="src:hero.badgeImg,alt:hero.badgeAlt" />
+        </a>
+      </div>
       <div>
         <span class="badge" data-i18n="hero.badge">iOS 16.2以上 対応 · 無料</span>
       </div>
@@ -1037,9 +1059,9 @@
       <p class="logo-footer" data-i18n="footer.brand">編みアシ</p>
       <p data-i18n="footer.copyright">&copy; 2026 OYOO. All rights reserved.</p>
       <div class="footer-links">
-        <a href="#faq">FAQ</a>
-        <a href="#support">サポート</a>
-        <a href="#privacy">プライバシーポリシー</a>
+        <a href="#faq" data-i18n="footer.faq">FAQ</a>
+        <a href="#support" data-i18n="footer.support">サポート</a>
+        <a href="#privacy" data-i18n="footer.privacy">プライバシーポリシー</a>
       </div>
     </div>
   </footer>
@@ -1072,6 +1094,9 @@
           'hero.subtitle': 'Knitting Assistant for iPhone',
           'hero.description': '編み図PDFや写真を読み込んで段帯をオーバーレイ表示。<br>音声・Siriで段数を管理する、新しい編み物体験。',
           'hero.cta': '使い方を見る',
+          'hero.badgeImg': 'badges/appstore-ja.svg',
+          'hero.badgeAlt': 'App Storeでダウンロード',
+          'hero.badgeUrl': 'https://apps.apple.com/jp/app/%E7%B7%A8%E3%81%BF%E3%82%A2%E3%82%B7-%E7%B7%A8%E3%81%BF%E7%89%A9%E3%82%A2%E3%82%B7%E3%82%B9%E3%82%BF%E3%83%B3%E3%83%88/id6759698233',
           'hero.badge': 'iOS 16.2以上 対応 · 無料',
 
           'features.label': 'Features',
@@ -1166,7 +1191,7 @@
           'footer.copyright': '© 2026 OYOO. All rights reserved.',
           'footer.support': 'サポート',
           'footer.faq': 'FAQ',
-          'footer.privacy': 'プライバシー',
+          'footer.privacy': 'プライバシーポリシー',
 
           'announce.title': '【お知らせ】2026/06/09 13:03 JST',
           'announce.body1': 'Ver1.1.0で、登録済みの編み図・プロジェクトが表示されない問題が発生したため、Ver1.1.1の修正版を公開しました。お手隙の際にアップデートをお願いいたします。',
@@ -1194,6 +1219,9 @@
           'hero.subtitle': 'Knitting Assistant for iPhone',
           'hero.description': 'Import knitting chart PDFs or photos and display them with a row-band overlay.<br>Manage your row count with voice and Siri — a new way to enjoy knitting.',
           'hero.cta': 'See how it works',
+          'hero.badgeImg': 'badges/appstore-en.svg',
+          'hero.badgeAlt': 'Download on the App Store',
+          'hero.badgeUrl': 'https://apps.apple.com/us/app/id6759698233',
           'hero.badge': 'iOS 16.2+ · Free',
 
           'features.label': 'Features',
@@ -1288,7 +1316,7 @@
           'footer.copyright': '© 2026 OYOO. All rights reserved.',
           'footer.support': 'Support',
           'footer.faq': 'FAQ',
-          'footer.privacy': 'Privacy',
+          'footer.privacy': 'Privacy Policy',
 
           'announce.title': '[Notice] 2026/06/09 13:03 JST',
           'announce.body1': 'In Ver 1.1.0, an issue occurred where saved knitting charts and projects were not displayed. We have released a fixed version, Ver 1.1.1. Please update at your convenience.',
@@ -1316,6 +1344,9 @@
           'hero.subtitle': 'Knitting Assistant for iPhone',
           'hero.description': '도안 PDF나 사진을 불러와 단 밴드를 오버레이 표시.<br>음성·Siri로 단수를 관리하는 새로운 뜨개질 경험.',
           'hero.cta': '사용법 보기',
+          'hero.badgeImg': 'badges/appstore-ko.svg',
+          'hero.badgeAlt': 'App Store에서 다운로드',
+          'hero.badgeUrl': 'https://apps.apple.com/kr/app/id6759698233',
           'hero.badge': 'iOS 16.2 이상 지원 · 무료',
 
           'features.label': 'Features',
@@ -1410,7 +1441,7 @@
           'footer.copyright': '© 2026 OYOO. All rights reserved.',
           'footer.support': '지원',
           'footer.faq': 'FAQ',
-          'footer.privacy': '개인정보',
+          'footer.privacy': '개인정보 처리방침',
 
           'announce.title': '【공지】2026/06/09 13:03 JST',
           'announce.body1': 'Ver1.1.0에서 등록된 도안·프로젝트가 표시되지 않는 문제가 발생하여, Ver1.1.1 수정 버전을 공개했습니다. 시간이 되실 때 업데이트해 주시기 바랍니다.',
