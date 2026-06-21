@@ -663,19 +663,8 @@
 </head>
 <body>
 
-  <!-- ── Announcement ── -->
-  <div class="announcement" role="alert">
-    <div class="container">
-      <span class="announcement-icon" aria-hidden="true">⚠️</span>
-      <div class="announcement-body">
-        <div class="announcement-title" data-i18n="announce.title">【お知らせ】2026/06/09 13:03 JST</div>
-        <p data-i18n="announce.body1">Ver1.1.0で、登録済みの編み図・プロジェクトが表示されない問題が発生したため、Ver1.1.1の修正版を公開しました。お手隙の際にアップデートをお願いいたします。</p>
-        <p data-i18n="announce.body2">なお、修正版でも登録内容が戻らない場合があることを確認しており、引き続き原因を調査しています。</p>
-        <p data-i18n="announce.body3">ご不便をおかけし、誠に申し訳ありません。大切な編み図・プロジェクトを失う形になってしまったこと、深くお詫び申し上げます。</p>
-        <p data-i18n="announce.body4">今後同じことが起きないよう、保存処理とアップデート時のデータ移行処理を見直します。</p>
-      </div>
-    </div>
-  </div>
+  <!-- ── Announcement (content is loaded from announcement.json) ── -->
+  <div class="announcement" id="announcement" role="alert" hidden></div>
 
   <!-- ── Header ── -->
   <header>
@@ -1083,6 +1072,9 @@
       const SUPPORTED_LANGS = ['ja', 'en', 'ko'];
       const STORAGE_KEY = 'preferred-lang';
 
+      // Announcement banner data, loaded from announcement.json at runtime.
+      let announceData = null;
+
       const T = {
         ja: {
           'meta.title': '編みアシ — 編み物アシスタントアプリ for iPhone | PDF・写真の編み図に段帯表示・音声操作',
@@ -1201,13 +1193,7 @@
           'footer.copyright': '© 2026 OYOO. All rights reserved.',
           'footer.support': 'サポート',
           'footer.faq': 'FAQ',
-          'footer.privacy': 'プライバシーポリシー',
-
-          'announce.title': '【お知らせ】2026/06/09 13:03 JST',
-          'announce.body1': 'Ver1.1.0で、登録済みの編み図・プロジェクトが表示されない問題が発生したため、Ver1.1.1の修正版を公開しました。お手隙の際にアップデートをお願いいたします。',
-          'announce.body2': 'なお、修正版でも登録内容が戻らない場合があることを確認しており、引き続き原因を調査しています。',
-          'announce.body3': 'ご不便をおかけし、誠に申し訳ありません。大切な編み図・プロジェクトを失う形になってしまったこと、深くお詫び申し上げます。',
-          'announce.body4': '今後同じことが起きないよう、保存処理とアップデート時のデータ移行処理を見直します。'
+          'footer.privacy': 'プライバシーポリシー'
         },
 
         en: {
@@ -1327,13 +1313,7 @@
           'footer.copyright': '© 2026 OYOO. All rights reserved.',
           'footer.support': 'Support',
           'footer.faq': 'FAQ',
-          'footer.privacy': 'Privacy Policy',
-
-          'announce.title': '[Notice] 2026/06/09 13:03 JST',
-          'announce.body1': 'In Ver 1.1.0, an issue occurred where saved knitting charts and projects were not displayed. We have released a fixed version, Ver 1.1.1. Please update at your convenience.',
-          'announce.body2': 'Please note that we have confirmed that, even with the fixed version, registered content may not be restored in some cases. We are continuing to investigate the cause.',
-          'announce.body3': 'We are truly sorry for the inconvenience. We deeply apologize that you have ended up losing your precious knitting charts and projects.',
-          'announce.body4': 'To prevent this from happening again, we will review our save processing and the data migration process performed during updates.'
+          'footer.privacy': 'Privacy Policy'
         },
 
         ko: {
@@ -1453,13 +1433,7 @@
           'footer.copyright': '© 2026 OYOO. All rights reserved.',
           'footer.support': '지원',
           'footer.faq': 'FAQ',
-          'footer.privacy': '개인정보 처리방침',
-
-          'announce.title': '【공지】2026/06/09 13:03 JST',
-          'announce.body1': 'Ver1.1.0에서 등록된 도안·프로젝트가 표시되지 않는 문제가 발생하여, Ver1.1.1 수정 버전을 공개했습니다. 시간이 되실 때 업데이트해 주시기 바랍니다.',
-          'announce.body2': '또한 수정 버전에서도 등록 내용이 복구되지 않는 경우가 있는 것을 확인하였으며, 계속해서 원인을 조사하고 있습니다.',
-          'announce.body3': '불편을 드려 대단히 죄송합니다. 소중한 도안·프로젝트를 잃게 되신 점, 깊이 사과드립니다.',
-          'announce.body4': '앞으로 같은 일이 발생하지 않도록, 저장 처리와 업데이트 시 데이터 이전 처리를 재점검하겠습니다.'
+          'footer.privacy': '개인정보 처리방침'
         }
       };
 
@@ -1546,14 +1520,73 @@
         });
 
         try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
+
+        renderAnnouncement(lang);
+      }
+
+      // Render (or hide) the announcement banner based on announcement.json.
+      function renderAnnouncement(lang) {
+        const el = document.getElementById('announcement');
+        if (!el) return;
+
+        const data = announceData;
+        if (!data || !data.enabled) {
+          el.hidden = true;
+          el.innerHTML = '';
+          return;
+        }
+
+        const content = data[lang] || data.ja || {};
+        const bodies = Array.isArray(content.body) ? content.body : [];
+
+        const wrap = document.createElement('div');
+        wrap.className = 'container';
+
+        const icon = document.createElement('span');
+        icon.className = 'announcement-icon';
+        icon.setAttribute('aria-hidden', 'true');
+        icon.textContent = data.icon || '⚠️';
+        wrap.appendChild(icon);
+
+        const body = document.createElement('div');
+        body.className = 'announcement-body';
+
+        if (content.title) {
+          const title = document.createElement('div');
+          title.className = 'announcement-title';
+          title.textContent = content.title;
+          body.appendChild(title);
+        }
+        bodies.forEach(function (text) {
+          const p = document.createElement('p');
+          p.textContent = text;
+          body.appendChild(p);
+        });
+
+        wrap.appendChild(body);
+        el.innerHTML = '';
+        el.appendChild(wrap);
+        el.hidden = false;
+      }
+
+      function loadAnnouncement() {
+        return fetch('announcement.json', { cache: 'no-store' })
+          .then(function (res) { return res.ok ? res.json() : null; })
+          .then(function (data) { announceData = data; })
+          .catch(function () { announceData = null; });
       }
 
       function init() {
-        applyTranslations(detectInitialLang());
+        const lang = detectInitialLang();
+        applyTranslations(lang);
         document.querySelectorAll('.lang-btn').forEach(function (btn) {
           btn.addEventListener('click', function () {
             applyTranslations(btn.getAttribute('data-lang'));
           });
+        });
+        // Load the announcement asynchronously, then render it in the current language.
+        loadAnnouncement().then(function () {
+          renderAnnouncement(document.documentElement.lang || lang);
         });
       }
 
