@@ -1,0 +1,31 @@
+{
+  "enabled": false,
+  "icon": "⚠️",
+  "ja": {
+    "title": "【お知らせ】2026/06/09 13:03 JST",
+    "body": [
+      "Ver1.1.0で、登録済みの編み図・プロジェクトが表示されない問題が発生したため、Ver1.1.1の修正版を公開しました。お手隙の際にアップデートをお願いいたします。",
+      "なお、修正版でも登録内容が戻らない場合があることを確認しており、引き続き原因を調査しています。",
+      "ご不便をおかけし、誠に申し訳ありません。大切な編み図・プロジェクトを失う形になってしまったこと、深くお詫び申し上げます。",
+      "今後同じことが起きないよう、保存処理とアップデート時のデータ移行処理を見直します。"
+    ]
+  },
+  "en": {
+    "title": "[Notice] 2026/06/09 13:03 JST",
+    "body": [
+      "In Ver 1.1.0, an issue occurred where saved knitting charts and projects were not displayed. We have released a fixed version, Ver 1.1.1. Please update at your convenience.",
+      "Please note that we have confirmed that, even with the fixed version, registered content may not be restored in some cases. We are continuing to investigate the cause.",
+      "We are truly sorry for the inconvenience. We deeply apologize that you have ended up losing your precious knitting charts and projects.",
+      "To prevent this from happening again, we will review our save processing and the data migration process performed during updates."
+    ]
+  },
+  "ko": {
+    "title": "【공지】2026/06/09 13:03 JST",
+    "body": [
+      "Ver1.1.0에서 등록된 도안·프로젝트가 표시되지 않는 문제가 발생하여, Ver1.1.1 수정 버전을 공개했습니다. 시간이 되실 때 업데이트해 주시기 바랍니다.",
+      "또한 수정 버전에서도 등록 내용이 복구되지 않는 경우가 있는 것을 확인하였으며, 계속해서 원인을 조사하고 있습니다.",
+      "불편을 드려 대단히 죄송합니다. 소중한 도안·프로젝트를 잃게 되신 점, 깊이 사과드립니다.",
+      "앞으로 같은 일이 발생하지 않도록, 저장 처리와 업데이트 시 데이터 이전 처리를 재점검하겠습니다."
+    ]
+  }
+}
