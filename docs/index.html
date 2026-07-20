@@ -11,6 +11,8 @@
   <link rel="alternate" hreflang="ja" href="https://oyoo-works.github.io/knitting-assistant-support/" />
   <link rel="alternate" hreflang="en" href="https://oyoo-works.github.io/knitting-assistant-support/?lang=en" />
   <link rel="alternate" hreflang="ko" href="https://oyoo-works.github.io/knitting-assistant-support/?lang=ko" />
+  <link rel="alternate" hreflang="id" href="https://oyoo-works.github.io/knitting-assistant-support/?lang=id" />
+  <link rel="alternate" hreflang="es" href="https://oyoo-works.github.io/knitting-assistant-support/?lang=es" />
   <link rel="alternate" hreflang="x-default" href="https://oyoo-works.github.io/knitting-assistant-support/" />
   <link rel="icon" type="image/png" href="app-icon.png" />
   <link rel="apple-touch-icon" href="app-icon.png" />
@@ -22,6 +24,8 @@
   <meta property="og:locale" content="ja_JP" />
   <meta property="og:locale:alternate" content="en_US" />
   <meta property="og:locale:alternate" content="ko_KR" />
+  <meta property="og:locale:alternate" content="id_ID" />
+  <meta property="og:locale:alternate" content="es_ES" />
   <meta property="og:url" content="https://oyoo-works.github.io/knitting-assistant-support/" />
   <meta property="og:site_name" content="編みアシ" />
   <meta property="og:image" content="https://oyoo-works.github.io/knitting-assistant-support/app-icon.png" />
@@ -42,7 +46,7 @@
         "@id": "https://oyoo-works.github.io/knitting-assistant-support/#website",
         "url": "https://oyoo-works.github.io/knitting-assistant-support/",
         "name": "編みアシ サポートページ",
-        "inLanguage": ["ja", "en", "ko"],
+        "inLanguage": ["ja", "en", "ko", "id", "es"],
         "publisher": {
           "@type": "Person",
           "name": "OYOO"
@@ -75,7 +79,7 @@
           "画面スリープ防止オプション",
           "棒針・かぎ針両対応",
           "段数カウンターのみモード",
-          "多言語対応（日本語・英語・韓国語）"
+          "多言語対応（日本語・英語・韓国語・インドネシア語・スペイン語）"
         ],
         "image": "https://oyoo-works.github.io/knitting-assistant-support/app-icon.png",
         "softwareRequirements": "iPhone、iOS 16.2以上",
@@ -84,7 +88,7 @@
           "@type": "Person",
           "name": "OYOO"
         },
-        "inLanguage": ["ja", "en", "ko"],
+        "inLanguage": ["ja", "en", "ko", "id", "es"],
         "audience": {
           "@type": "Audience",
           "audienceType": "編み物愛好家"
@@ -682,6 +686,8 @@
           <button type="button" class="lang-btn" data-lang="ja">日本語</button>
           <button type="button" class="lang-btn" data-lang="en">EN</button>
           <button type="button" class="lang-btn" data-lang="ko">한국어</button>
+          <button type="button" class="lang-btn" data-lang="id">ID</button>
+          <button type="button" class="lang-btn" data-lang="es">ES</button>
         </div>
       </div>
     </div>
@@ -1069,7 +1075,7 @@
     (function () {
       'use strict';
 
-      const SUPPORTED_LANGS = ['ja', 'en', 'ko'];
+      const SUPPORTED_LANGS = ['ja', 'en', 'ko', 'id', 'es'];
       const STORAGE_KEY = 'preferred-lang';
 
       // Announcement banner data, loaded from announcement.json at runtime.
@@ -1434,6 +1440,246 @@
           'footer.support': '지원',
           'footer.faq': 'FAQ',
           'footer.privacy': '개인정보 처리방침'
+        },
+
+        id: {
+          'meta.title': 'AmiAshi — Asisten Merajut untuk iPhone | Overlay pita baris & kontrol suara Siri',
+          'meta.description': 'AmiAshi adalah asisten merajut gratis untuk iPhone yang menampilkan overlay pita baris pada PDF dan foto pola rajutan Anda, dengan penghitungan baris melalui suara dan Siri. Cocok untuk rajut dan kait. Membutuhkan iOS 16.2+.',
+          'meta.ogTitle': 'AmiAshi — Asisten Merajut untuk iPhone',
+          'meta.ogDescription': 'Tampilkan overlay pita baris pada PDF pola Anda. Kelola hitungan baris dengan suara dan Siri — cara baru menikmati merajut.',
+          'meta.ogLocale': 'id_ID',
+
+          'header.logo': 'Ami<span>Ashi</span>',
+          'nav.features': 'Fitur',
+          'nav.how': 'Cara Pakai',
+          'nav.faq': 'FAQ',
+          'nav.privacy': 'Privasi',
+          'nav.support': 'Dukungan',
+
+          'hero.iconAlt': 'Ikon aplikasi AmiAshi',
+          'hero.title': 'AmiAshi',
+          'hero.subtitle': 'Asisten Merajut',
+          'hero.description': 'Impor PDF atau foto pola rajutan dan tampilkan dengan overlay pita baris.<br>Kelola hitungan baris dengan suara dan Siri — cara baru menikmati merajut.',
+          'hero.cta': 'Lihat cara kerjanya',
+          'hero.badgeImg': 'badges/appstore-en.svg',
+          'cta.badgeImg': 'badges/appstore-en-white.svg',
+          'hero.badgeAlt': 'Unduh di App Store',
+          'hero.badgeUrl': 'https://apps.apple.com/id/app/id6759698233',
+          'hero.badge': 'iOS 16.2+ · Gratis',
+
+          'features.label': 'Features',
+          'features.title': 'Yang bisa Anda lakukan dengan AmiAshi',
+          'features.card1.title': 'Impor dan tampilkan pola Anda',
+          'features.card1.body': 'Impor PDF atau foto pola rajutan Anda ke dalam aplikasi. Sorotan pita baris selalu menunjukkan baris Anda saat ini.',
+          'features.card2.title': 'Pola foto juga didukung',
+          'features.card2.body': 'Anda juga dapat mengimpor foto pola yang tersimpan di galeri. Tidak perlu PDF.',
+          'features.card3.title': 'Majukan baris dengan suara',
+          'features.card3.body': 'Cukup ucapkan "Baris berikutnya" untuk maju satu baris. Sempurna saat kedua tangan sibuk merajut.',
+          'features.card4.title': 'Dukungan Pintasan Siri',
+          'features.card4.body': 'Ucapkan "Hey Siri, baris berikutnya di AmiAshi" untuk maju bahkan saat menggunakan aplikasi lain.',
+          'features.card5.title': 'Kalibrasi pita baris',
+          'features.card5.body': 'Atur tinggi baris serta tepi atas/bawah dengan tepat melalui panduan langkah. Cocok untuk pola apa pun.',
+          'features.card6.title': 'Gunakan sebagai penghitung sederhana',
+          'features.card6.body': 'Tanpa PDF atau foto pun bisa. Gunakan sebagai penghitung baris sederhana untuk rajut maupun kait.',
+
+          'how.label': 'How to Use',
+          'how.title': '3 langkah mudah',
+          'how.step1.title': 'Buat proyek',
+          'how.step1.body': 'Ketuk "Baru" dan impor PDF atau foto pola. Beri judul lalu simpan. Penghitungan baris saja juga tersedia.',
+          'how.step2.title': 'Sejajarkan pita baris dengan pola Anda',
+          'how.step2.body': 'Jalankan kalibrasi di "Penyesuaian tinggi". Sejajarkan tepi atas dan bawah pita baris dengan baris asli untuk pelacakan yang akurat.',
+          'how.step3.title': 'Merajut dan majukan baris',
+          'how.step3.body': 'Gunakan tombol "Baris berikutnya", suara, atau Siri untuk maju. Nomor baris saat ini ditampilkan besar, dan pita baris pada pola Anda menggulir otomatis.',
+
+          'faq.label': 'FAQ',
+          'faq.title': 'Pertanyaan yang Sering Diajukan',
+          'faq.cat1.title': 'Tentang aplikasi',
+          'faq.cat2.title': 'Cara pakai',
+          'faq.cat3.title': 'Izin & Pengaturan',
+          'faq.cat4.title': 'Unduhan & Harga',
+          'faq.cat5.title': 'Batasan & Fitur mendatang',
+
+          'faq.q1.q': 'Apa itu AmiAshi?',
+          'faq.q1.a': 'AmiAshi adalah aplikasi asisten merajut untuk iPhone. Impor PDF pola rajutan dan merajutlah sementara sorotan (pita baris) menunjukkan baris Anda saat ini. Dengan Siri atau kontrol suara, Anda dapat memajukan baris atau memeriksa nomor baris saat ini tanpa meletakkan jarum rajut.',
+          'faq.q2.q': 'Perangkat apa saja yang didukung?',
+          'faq.q2.a': 'AmiAshi mendukung iPhone. Membutuhkan iOS 16.2 atau lebih baru. Juga dapat digunakan di iPad.',
+          'faq.q3.q': 'Bisakah saya memakai AmiAshi untuk rajut dan kait?',
+          'faq.q3.a': 'Ya. AmiAshi adalah penghitung baris dengan manajemen pola, sehingga cocok untuk rajut maupun kait.',
+          'faq.q4.q': 'Bisakah saya mengelola banyak proyek rajutan?',
+          'faq.q4.a': 'Ya. Anda dapat membuat dan mengelola beberapa proyek dalam aplikasi. Setiap proyek menyimpan pola dan progres barisnya sendiri.',
+          'faq.q5.q': 'Bagaimana cara memakai Siri?',
+          'faq.q5.a': 'Ucapkan "Baris berikutnya di AmiAshi" untuk maju satu baris. Tanyakan "Saya di baris berapa di AmiAshi?" untuk mendengar baris Anda saat ini.',
+          'faq.q6.q': 'Bagaimana cara mengimpor PDF pola rajutan?',
+          'faq.q6.a': 'Dari layar pembuatan proyek di aplikasi, pilih berkas PDF untuk diimpor. Saat ini PDF 1 halaman yang didukung. Anda dapat memilih PDF dari aplikasi Files atau iCloud di iPhone Anda.',
+          'faq.q7.q': 'Bagaimana cara memakai perintah suara selain Siri?',
+          'faq.q7.a': 'Anda dapat mengontrol hitungan baris dengan perintah suara seperti "Baris berikutnya". Untuk memakai perintah suara non-Siri, Anda harus memberikan izin Mikrofon dan Pengenalan Ucapan kepada aplikasi. Izin dapat diberikan dari Pengaturan iPhone → Privasi & Keamanan → Mikrofon atau Pengenalan Ucapan.',
+          'faq.q8.q': 'Pita baris (sorotan) tidak sejajar. Bisakah diperbaiki?',
+          'faq.q8.a': 'Anda dapat menyesuaikannya dengan fitur kalibrasi "Penyesuaian tinggi". Buka "Penyesuaian tinggi" dari layar proyek dan sesuaikan tinggi baris, tepi atas, dan tepi bawah agar cocok dengan pola asli. Karena tinggi baris berbeda-beda tiap pola, kalibrasi sekali memberikan tampilan pita baris yang akurat.',
+          'faq.q9.q': 'Bisakah saya memakai aplikasi tanpa memberikan izin mikrofon atau pengenalan ucapan?',
+          'faq.q9.a': 'Ya. Bahkan tanpa memberikan izin kontrol suara, semua fitur utama seperti tampilan PDF, overlay pita baris, dan penghitungan baris manual berfungsi normal.',
+          'faq.q10.q': 'Izin apa yang diminta aplikasi?',
+          'faq.q10.a': 'AmiAshi hanya membutuhkan izin "Mikrofon" dan "Pengenalan Ucapan". Keduanya digunakan untuk fitur kontrol suara. Tanpa memberikan izin ini pun, tampilan PDF dan operasi manual tetap berfungsi normal.',
+          'faq.q11.q': 'Bisakah saya mengunduhnya dari App Store?',
+          'faq.q11.a': 'Ya, tersedia di App Store.',
+          'faq.q11.linkText': 'Buka di App Store',
+          'faq.q12.q': 'Apakah aplikasinya gratis?',
+          'faq.q12.a': 'Ya, aplikasi ini gratis untuk diunduh dan digunakan. Anda dapat mendaftarkan hingga 5 proyek (pola rajutan) secara gratis. Pembelian dalam aplikasi satu kali membuka proyek tak terbatas. Anda juga dapat menonton iklan untuk menambah satu proyek tambahan setiap kali.',
+          'faq.q13.q': 'Mengapa hanya mendukung PDF 1 halaman?',
+          'faq.q13.a': 'Versi saat ini dirancang seputar PDF 1 halaman agar tetap sederhana. Dukungan PDF multi-halaman sedang dipertimbangkan sebagai fitur mendatang.',
+          'faq.q14.q': 'Bagaimana cara melaporkan bug atau meminta fitur?',
+          'faq.q14.a': 'Silakan kirim laporan bug atau permintaan fitur melalui informasi kontak di bagian dukungan di bawah. Pengembang akan meninjau dan mempertimbangkan setiap permintaan.',
+
+          'privacy.label': 'Privacy',
+          'privacy.title': 'Kebijakan Privasi',
+          'privacy.mic.title': 'Mikrofon & Pengenalan Ucapan',
+          'privacy.mic.body1': 'Aplikasi ini menggunakan mikrofon dan pengenalan ucapan untuk fitur kontrol suara.',
+          'privacy.mic.body2': 'Data suara diproses hanya di perangkat. Data tidak pernah disimpan atau dikirim.',
+          'privacy.data.title': 'Penyimpanan Data',
+          'privacy.data.body': 'Semua data termasuk proyek, PDF pola, foto, dan hitungan baris disimpan secara lokal di iPhone Anda. Tidak ada data yang dikirim ke server eksternal.',
+          'privacy.contact.title': 'Kontak',
+          'privacy.contact.bodyPrefix': 'Untuk pertanyaan terkait privasi, silakan hubungi ',
+          'privacy.contact.bodySuffix': '.',
+
+          'support.label': 'Support',
+          'support.title': 'Dukungan & Kontak',
+          'support.card1.title': 'Jika masalah Anda belum teratasi',
+          'support.card1.bodyPrefix': 'Silakan hubungi kami di ',
+          'support.card1.bodySuffix': '',
+          'support.card2.title': 'Kebijakan Privasi',
+          'support.card2.body': 'Aplikasi ini tidak mengirim data pengguna ke luar. Mikrofon dan Speech Recognition hanya digunakan untuk kontrol suara.',
+          'support.card2.link': 'Selengkapnya →',
+          'support.card3.title': 'Persyaratan sistem',
+          'support.card3.body': 'iPhone / iOS 16.2 atau lebih baru<br>Izin yang diperlukan: Mikrofon (hanya saat menggunakan kontrol suara)',
+
+          'cta.title': 'Jadikan merajut lebih menyenangkan',
+          'cta.body': 'Hilangkan kerepotan menghitung baris dengan AmiAshi.',
+          'cta.button': 'Lihat FAQ',
+
+          'footer.brand': 'AmiAshi',
+          'footer.copyright': '© 2026 OYOO. All rights reserved.',
+          'footer.support': 'Dukungan',
+          'footer.faq': 'FAQ',
+          'footer.privacy': 'Kebijakan Privasi'
+        },
+
+        es: {
+          'meta.title': 'AmiAshi — Asistente para Tejer para iPhone | Superposición de banda de fila y control por voz con Siri',
+          'meta.description': 'AmiAshi es un asistente de tejido gratuito para iPhone que superpone una banda de fila sobre tus PDF y fotos de patrones de tejido, con conteo de filas por voz y con Siri. Sirve para tejido de agujas y ganchillo. Requiere iOS 16.2+.',
+          'meta.ogTitle': 'AmiAshi — Asistente para Tejer para iPhone',
+          'meta.ogDescription': 'Superpón una banda de fila sobre el PDF de tu patrón. Gestiona el conteo de filas con voz y Siri: una nueva forma de disfrutar del tejido.',
+          'meta.ogLocale': 'es_ES',
+
+          'header.logo': 'Ami<span>Ashi</span>',
+          'nav.features': 'Funciones',
+          'nav.how': 'Cómo usar',
+          'nav.faq': 'FAQ',
+          'nav.privacy': 'Privacidad',
+          'nav.support': 'Soporte',
+
+          'hero.iconAlt': 'Icono de la app AmiAshi',
+          'hero.title': 'AmiAshi',
+          'hero.subtitle': 'Asistente para Tejer',
+          'hero.description': 'Importa PDF o fotos de patrones de tejido y muéstralos con una superposición de banda de fila.<br>Gestiona tu conteo de filas con voz y Siri: una nueva forma de disfrutar del tejido.',
+          'hero.cta': 'Ver cómo funciona',
+          'hero.badgeImg': 'badges/appstore-en.svg',
+          'cta.badgeImg': 'badges/appstore-en-white.svg',
+          'hero.badgeAlt': 'Descárgalo en el App Store',
+          'hero.badgeUrl': 'https://apps.apple.com/es/app/id6759698233',
+          'hero.badge': 'iOS 16.2+ · Gratis',
+
+          'features.label': 'Features',
+          'features.title': 'Lo que puedes hacer con AmiAshi',
+          'features.card1.title': 'Importa y muestra tu patrón',
+          'features.card1.body': 'Importa los PDF o fotos de tus patrones de tejido en la app. El resaltado de banda de fila siempre muestra tu fila actual.',
+          'features.card2.title': 'También admite patrones en foto',
+          'features.card2.body': 'También puedes importar fotos de patrones guardadas en tu galería. No necesitas PDF.',
+          'features.card3.title': 'Avanza filas por voz',
+          'features.card3.body': 'Solo di "Siguiente fila" para avanzar una fila. Perfecto cuando tienes ambas manos ocupadas tejiendo.',
+          'features.card4.title': 'Compatible con Atajos de Siri',
+          'features.card4.body': 'Di "Oye Siri, siguiente fila en AmiAshi" para avanzar incluso mientras usas otras apps.',
+          'features.card5.title': 'Calibración de la banda de fila',
+          'features.card5.body': 'Ajusta con precisión la altura de fila y los bordes superior/inferior con la guía paso a paso. Se adapta a cualquier patrón.',
+          'features.card6.title': 'Úsalo como un contador simple',
+          'features.card6.body': 'Sin necesidad de PDF ni foto. Úsalo como un contador de filas simple para tejido de agujas y ganchillo.',
+
+          'how.label': 'How to Use',
+          'how.title': '3 pasos sencillos',
+          'how.step1.title': 'Crea un proyecto',
+          'how.step1.body': 'Toca "Nuevo" e importa un patrón en PDF o foto. Añade un título y guarda. También está disponible el conteo solo de filas.',
+          'how.step2.title': 'Alinea la banda de fila con tu patrón',
+          'how.step2.body': 'Ejecuta la calibración en "Ajuste de altura". Alinea los bordes superior e inferior de la banda de fila con tus filas reales para un seguimiento preciso.',
+          'how.step3.title': 'Teje y avanza filas',
+          'how.step3.body': 'Usa el botón "Siguiente fila", la voz o Siri para avanzar. El número de fila actual se muestra en grande y la banda de fila de tu patrón se desplaza automáticamente.',
+
+          'faq.label': 'FAQ',
+          'faq.title': 'Preguntas frecuentes',
+          'faq.cat1.title': 'Sobre la app',
+          'faq.cat2.title': 'Cómo usar',
+          'faq.cat3.title': 'Permisos y ajustes',
+          'faq.cat4.title': 'Descarga y precio',
+          'faq.cat5.title': 'Limitaciones y funciones futuras',
+
+          'faq.q1.q': '¿Qué es AmiAshi?',
+          'faq.q1.a': 'AmiAshi es una app de asistente de tejido para iPhone. Importa el PDF de un patrón de tejido y teje mientras un resaltado (banda de fila) muestra tu fila actual. Con Siri o el control por voz, puedes avanzar filas o consultar tu número de fila actual sin soltar las agujas.',
+          'faq.q2.q': '¿Qué dispositivos son compatibles?',
+          'faq.q2.a': 'AmiAshi es compatible con iPhone. Se requiere iOS 16.2 o posterior. También funciona en iPad.',
+          'faq.q3.q': '¿Puedo usar AmiAshi para tejido de agujas y ganchillo?',
+          'faq.q3.a': 'Sí. AmiAshi es un contador de filas con gestión de patrones, así que funciona igual de bien para tejido de agujas y ganchillo.',
+          'faq.q4.q': '¿Puedo gestionar varios proyectos de tejido?',
+          'faq.q4.a': 'Sí. Puedes crear y gestionar varios proyectos dentro de la app. Cada proyecto guarda su propio patrón y progreso de filas.',
+          'faq.q5.q': '¿Cómo uso Siri?',
+          'faq.q5.a': 'Di "Siguiente fila en AmiAshi" para avanzar una fila. Pregunta "¿En qué fila estoy en AmiAshi?" para escuchar tu fila actual.',
+          'faq.q6.q': '¿Cómo importo un PDF de patrón de tejido?',
+          'faq.q6.a': 'Desde la pantalla de creación de proyectos de la app, selecciona un archivo PDF para importarlo. Actualmente se admiten PDF de 1 página. Puedes elegir PDF desde la app Archivos o iCloud en tu iPhone.',
+          'faq.q7.q': '¿Cómo uso comandos de voz distintos de Siri?',
+          'faq.q7.a': 'Puedes controlar tu conteo de filas con comandos de voz como "Siguiente fila". Para usar comandos de voz que no sean de Siri, debes conceder a la app los permisos de Micrófono y Reconocimiento de voz. Los permisos se conceden desde Ajustes de iPhone → Privacidad y seguridad → Micrófono o Reconocimiento de voz.',
+          'faq.q8.q': 'La banda de fila (resaltado) está desalineada. ¿Puedo corregirla?',
+          'faq.q8.a': 'Puedes ajustarla con la función de calibración "Ajuste de altura". Abre "Ajuste de altura" desde la pantalla del proyecto y ajusta la altura de fila, el borde superior y el borde inferior para que coincidan con tu patrón real. Como la altura de fila varía según el patrón, calibrar una vez proporciona una visualización precisa de la banda de fila.',
+          'faq.q9.q': '¿Puedo usar la app sin conceder los permisos de micrófono o reconocimiento de voz?',
+          'faq.q9.a': 'Sí. Incluso sin conceder los permisos de control por voz, todas las funciones principales, como la visualización de PDF, la superposición de banda de fila y el conteo manual de filas, funcionan con normalidad.',
+          'faq.q10.q': '¿Qué permisos requiere la app?',
+          'faq.q10.a': 'AmiAshi solo requiere los permisos de "Micrófono" y "Reconocimiento de voz". Ambos se usan para las funciones de control por voz. Incluso sin concederlos, la visualización de PDF y el manejo manual funcionan con normalidad.',
+          'faq.q11.q': '¿Puedo descargarla desde el App Store?',
+          'faq.q11.a': 'Sí, está disponible en el App Store.',
+          'faq.q11.linkText': 'Abrir en el App Store',
+          'faq.q12.q': '¿La app es gratuita?',
+          'faq.q12.a': 'Sí, la app es gratuita para descargar y usar. Puedes registrar hasta 5 proyectos (patrones de tejido) gratis. Una compra única dentro de la app desbloquea proyectos ilimitados. También puedes ver un anuncio para añadir un proyecto extra cada vez.',
+          'faq.q13.q': '¿Por qué solo admite PDF de 1 página?',
+          'faq.q13.a': 'La versión actual está diseñada en torno a PDF de 1 página para mantener la sencillez. La compatibilidad con PDF de varias páginas se está considerando como función futura.',
+          'faq.q14.q': '¿Cómo informo de errores o solicito funciones?',
+          'faq.q14.a': 'Envía informes de errores o solicitudes de funciones a través de la información de contacto de la sección de soporte más abajo. El desarrollador revisará y considerará cada solicitud.',
+
+          'privacy.label': 'Privacy',
+          'privacy.title': 'Política de privacidad',
+          'privacy.mic.title': 'Micrófono y reconocimiento de voz',
+          'privacy.mic.body1': 'Esta app usa el micrófono y el reconocimiento de voz para las funciones de control por voz.',
+          'privacy.mic.body2': 'Los datos de voz se procesan solo en el dispositivo. Nunca se almacenan ni se transmiten.',
+          'privacy.data.title': 'Almacenamiento de datos',
+          'privacy.data.body': 'Todos los datos, incluidos proyectos, PDF de patrones, fotos y conteos de filas, se guardan localmente en tu iPhone. No se envían datos a servidores externos.',
+          'privacy.contact.title': 'Contacto',
+          'privacy.contact.bodyPrefix': 'Para preguntas relacionadas con la privacidad, contacta con ',
+          'privacy.contact.bodySuffix': '.',
+
+          'support.label': 'Support',
+          'support.title': 'Soporte y contacto',
+          'support.card1.title': 'Si tu problema no se resuelve',
+          'support.card1.bodyPrefix': 'Contáctanos en ',
+          'support.card1.bodySuffix': '',
+          'support.card2.title': 'Política de privacidad',
+          'support.card2.body': 'Esta app no transmite datos de usuario al exterior. El micrófono y Speech Recognition se usan solo para el control por voz.',
+          'support.card2.link': 'Leer más →',
+          'support.card3.title': 'Requisitos del sistema',
+          'support.card3.body': 'iPhone / iOS 16.2 o posterior<br>Permisos necesarios: Micrófono (solo al usar el control por voz)',
+
+          'cta.title': 'Haz que tejer sea más divertido',
+          'cta.body': 'Elimina la molestia de contar filas con AmiAshi.',
+          'cta.button': 'Ver FAQ',
+
+          'footer.brand': 'AmiAshi',
+          'footer.copyright': '© 2026 OYOO. All rights reserved.',
+          'footer.support': 'Soporte',
+          'footer.faq': 'FAQ',
+          'footer.privacy': 'Política de privacidad'
         }
       };
 
@@ -1462,6 +1708,8 @@
           const l = (langs[i] || '').toLowerCase();
           if (l.startsWith('ja')) return 'ja';
           if (l.startsWith('ko')) return 'ko';
+          if (l.startsWith('id')) return 'id';
+          if (l.startsWith('es')) return 'es';
           if (l.startsWith('en')) return 'en';
         }
         return 'ja';
